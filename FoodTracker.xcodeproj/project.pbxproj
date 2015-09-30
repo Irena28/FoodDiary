@@ -13,6 +13,7 @@
 		0AA4F2571BBAFABE00AA789C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA4F2561BBAFABE00AA789C /* Assets.xcassets */; };
 		0AA4F25A1BBAFABE00AA789C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AA4F2581BBAFABE00AA789C /* LaunchScreen.storyboard */; };
 		0AA4F2651BBAFABE00AA789C /* FoodTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F2641BBAFABE00AA789C /* FoodTrackerTests.swift */; };
+		0AA4F2721BBC6E6200AA789C /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4F2711BBC6E6200AA789C /* RatingControl.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0AA4F2601BBAFABE00AA789C /* FoodTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA4F2641BBAFABE00AA789C /* FoodTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTrackerTests.swift; sourceTree = "<group>"; };
 		0AA4F2661BBAFABE00AA789C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AA4F2711BBC6E6200AA789C /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				0AA4F24F1BBAFABE00AA789C /* AppDelegate.swift */,
 				0AA4F2511BBAFABE00AA789C /* ViewController.swift */,
 				0AA4F2531BBAFABE00AA789C /* Main.storyboard */,
+				0AA4F2711BBC6E6200AA789C /* RatingControl.swift */,
 				0AA4F2561BBAFABE00AA789C /* Assets.xcassets */,
 				0AA4F2581BBAFABE00AA789C /* LaunchScreen.storyboard */,
 				0AA4F25B1BBAFABE00AA789C /* Info.plist */,
@@ -197,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AA4F2521BBAFABE00AA789C /* ViewController.swift in Sources */,
+				0AA4F2721BBC6E6200AA789C /* RatingControl.swift in Sources */,
 				0AA4F2501BBAFABE00AA789C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

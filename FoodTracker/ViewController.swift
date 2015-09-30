@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
     
     //MARK Proporties
 
@@ -54,16 +55,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     func imagePickerConroller (picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject])
     {
     
+        let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        photoImageView.image = selectedImage
+        
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     //Mark Actions
-    
-    @IBAction func setDefaultLabelText(sender: UIButton)
-    
-    {
-        mealNameLabel.text = "Default Text"
-    }
-
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer)
     {
         nameTextField.resignFirstResponder()
@@ -73,8 +72,16 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         imagePickerCotroller.sourceType = .PhotoLibrary
         
         imagePickerCotroller.delegate = self
-       
+        
         presentViewController(imagePickerCotroller, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func setDefaultLabelText(sender: UIButton)
+    
+    {
+        mealNameLabel.text = "Default Text"
+    }
+
 }
 
