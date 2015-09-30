@@ -42,6 +42,20 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         
     }
     
+    
+    //Mark ImagePickerCotrollerDeligate
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController)
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+  
+    func imagePickerConroller (picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject])
+    {
+    
+    }
+    
     //Mark Actions
     
     @IBAction func setDefaultLabelText(sender: UIButton)
@@ -55,8 +69,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         nameTextField.resignFirstResponder()
         
         let imagePickerCotroller = UIImagePickerController()
+        
         imagePickerCotroller.sourceType = .PhotoLibrary
+        
         imagePickerCotroller.delegate = self
+       
         presentViewController(imagePickerCotroller, animated: true, completion: nil)
     }
 }
