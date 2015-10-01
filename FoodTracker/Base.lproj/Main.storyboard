@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -13,12 +14,12 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Nbf-Y0-aEy">
-                                <rect key="frame" x="21" y="83" width="559" height="105"/>
+                                <rect key="frame" x="21" y="28" width="559" height="493"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mt-KD-GaH">
                                         <rect key="frame" x="0.0" y="0.0" width="92" height="21"/>
@@ -38,21 +39,26 @@
                                             <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2fc-8S-dyw"/>
                                         </connections>
                                     </button>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="1as-Bc-b7x">
+                                        <rect key="frame" x="0.0" y="117" width="320" height="320"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1as-Bc-b7x" secondAttribute="height" multiplier="1:1" id="Arv-zV-3VO"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="G5e-zF-fAo" appends="YES" id="wRS-gd-IcO"/>
+                                        </connections>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" translatesAutoresizingMaskIntoConstraints="NO" id="Guh-J0-uhS" customClass="RatingControl" customModule="FoodTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="449" width="240" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="J7E-XU-Zlk" firstAttribute="leading" secondItem="Nbf-Y0-aEy" secondAttribute="leading" id="SqD-6Z-Wtz"/>
                                     <constraint firstAttribute="trailing" secondItem="J7E-XU-Zlk" secondAttribute="trailing" id="kHf-Rm-br2"/>
                                 </constraints>
                             </stackView>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="44" image="Image-1" translatesAutoresizingMaskIntoConstraints="NO" id="1as-Bc-b7x">
-                                <rect key="frame" x="20" y="188" width="289" height="331"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="hyb-Vt-yiG" appends="YES" id="D9M-Ei-VXk"/>
-                                    <outletCollection property="gestureRecognizers" destination="hyb-Vt-yiG" appends="YES" id="Nco-pI-QxS"/>
-                                    <outletCollection property="gestureRecognizers" destination="hUI-Cj-xBo" appends="YES" id="DyW-Kd-nGv"/>
-                                </connections>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -64,17 +70,14 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="9Mt-KD-GaH" id="vXr-0x-vc7"/>
                         <outlet property="nameTextField" destination="J7E-XU-Zlk" id="Fan-r4-5Be"/>
+                        <outlet property="photoImageView" destination="1as-Bc-b7x" id="x1B-Jk-oLy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="hyb-Vt-yiG">
+                <tapGestureRecognizer id="hUI-Cj-xBo"/>
+                <tapGestureRecognizer id="G5e-zF-fAo">
                     <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="Vxm-gY-xYx"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <tapGestureRecognizer id="hUI-Cj-xBo">
-                    <connections>
-                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="G1s-uQ-ZSa"/>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="aGw-jY-rd5"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
     @IBOutlet weak var mealNameLabel: UILabel!
     
     @IBOutlet weak var photoImageView: UIImageView!
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,16 +52,17 @@ class ViewController: UIViewController, UITextFieldDelegate, UIImagePickerContro
         dismissViewControllerAnimated(true, completion: nil)
     }
     
-  
-    func imagePickerConroller (picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: AnyObject])
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
     {
-    
         let selectedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         photoImageView.image = selectedImage
         
         dismissViewControllerAnimated(true, completion: nil)
+
     }
+  
+    
     
     //Mark Actions
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer)
