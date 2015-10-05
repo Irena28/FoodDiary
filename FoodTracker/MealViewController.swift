@@ -112,7 +112,16 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBAction func cancel(sender: UIBarButtonItem)
     
     {
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInAddMealMode = presentedViewController is UINavigationController
+        
+        if isPresentingInAddMealMode
+        {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else
+        {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
     //Mark Actions

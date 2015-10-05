@@ -139,6 +139,19 @@ class MealTableViewController: UITableViewController {
     { if let sourceViewController = sender.sourceViewController as?
         MealViewController, meal = sourceViewController.meal
         {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow
+            {
+                meals[selectedIndexPath.row] = meal
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            }
+            else
+            {
+                //add new meal
+                let newIndexPath = NSIndexPath(forRow: meals.count, inSection: 0)
+                meals.append(meal)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+            }
+            
             let newIndexPath = NSIndexPath(forRow: meals.count, inSection: 0)
             meals.append(meal)
             tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
