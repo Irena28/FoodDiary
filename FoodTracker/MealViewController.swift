@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MealViewController.swift
 //  FoodTracker
 //
 //  Created by Irena Davy on 9/29/15.
@@ -21,11 +21,17 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     
     @IBOutlet weak var ratingControl: RatingControl!
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    var meal: Meal?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         nameTextField.delegate = self
+        
+        checkValidMealName()
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,8 +47,26 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         return true
     }
 
-    func textFieldDidEndEditing(textField: UITextField) {
-  
+ 
+    
+    func textFieldDidBeginEditing(textField: UITextField)
+    {
+        saveButton.enabled = false
+    }
+    
+    func checkValidMealName()
+    {
+    
+    let text = nameTextField.text ?? ""
+        saveButton.enabled = !text.isEmpty
+    
+    }
+    
+    
+    func textFieldDidEndEditing(textField: UITextField)
+    {
+    checkValidMealName()
+        navigationItem.title = textField.text
         
     }
     
@@ -63,7 +87,18 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         dismissViewControllerAnimated(true, completion: nil)
 
     }
-  
+   //Mark Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if saveButton === sender
+        {
+            let name = nameTextField.text ?? ""
+            let photo = photoImageView.image
+            let rating = ratingControl.rating
+            meal =  Meal(name: name, photo: photo, rating: rating)
+            
+        }
+    }
     
     
     //Mark Actions
