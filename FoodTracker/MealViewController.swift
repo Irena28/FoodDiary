@@ -31,6 +31,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         // Do any additional setup after loading the view, typically from a nib.
         nameTextField.delegate = self
         
+        if let meal = meal
+        {
+            navigationItem.title = meal.name
+            nameTextField.text = meal.name
+            photoImageView.image = meal.photo
+            ratingControl.rating = meal.rating
+        }
+        
         checkValidMealName()
     }
 
@@ -100,6 +108,12 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         }
     }
     
+    
+    @IBAction func cancel(sender: UIBarButtonItem)
+    
+    {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     //Mark Actions
     @IBAction func selectImageFromPhotoLibrary(sender: UITapGestureRecognizer)

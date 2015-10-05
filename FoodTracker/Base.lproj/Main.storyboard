@@ -47,6 +47,7 @@
                                     <outlet property="nameLabel" destination="mYM-hU-qiz" id="Fwm-R9-XYD"/>
                                     <outlet property="photoImageView" destination="2VU-yx-Ecr" id="SVf-mD-dZi"/>
                                     <outlet property="ratingControl" destination="6rD-9a-B6n" id="lTe-OV-7EW"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="ShowDetail" id="WkQ-B5-PIB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -121,7 +122,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="FQC-NF-JJI">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mnR-Wn-P4T"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mnR-Wn-P4T">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="6Yc-I9-iCp"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="ynx-jD-WsV">
                             <connections>
                                 <segue destination="B90-51-E5y" kind="unwind" unwindAction="unwindToMealList:" id="n6f-Jp-lBZ"/>
@@ -182,10 +187,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrn-du-P6g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286" y="429"/>
+            <point key="canvasLocation" x="1378" y="836"/>
         </scene>
     </scenes>
     <resources>
         <image name="Default Picture" width="540" height="540"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="WkQ-B5-PIB"/>
+    </inferredMetricsTieBreakers>
 </document>
